@@ -23,7 +23,7 @@ let id = props.id
 
     try {
  
-      const res = axios.put('http://localhost:5000/api/users/photo/' +id  , formData, {
+      const res = axios.put('https://oneapp-backend.vercel.app/api/users/photo/' +id  , formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         },

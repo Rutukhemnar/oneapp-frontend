@@ -70,7 +70,7 @@ export const viewQuery = (payload) => {
 export const getPendingDoctors = () => {
   return (dispatch) => {
     axios
-      .get("http://localhost:5000/api/admin/pendingDoctors")
+      .get("https://oneapp-backend.vercel.app/api/admin/pendingDoctors")
       .then(function (response) {
         console.log(response.data);
         dispatch(viewPendingDoctors(response.data));
@@ -85,7 +85,7 @@ export const getPendingDoctors = () => {
 export const approveDoctorAction = (user, id) => {
   return (dispatch) => {
     axios
-      .patch("http://localhost:5000/api/users/" + id, user)
+      .patch("https://oneapp-backend.vercel.app/api/users/" + id, user)
       .then(function (res) {
         const notify = "Doctor has been approved!!";        
         dispatch(notification(notify));
@@ -100,7 +100,7 @@ export const approveDoctorAction = (user, id) => {
 export const rejectDoctorAction = (id) => {
   return (dispatch) => {
     axios
-      .delete("http://localhost:5000/api/users/" + id)
+      .delete("https://oneapp-backend.vercel.app/api/users/" + id)
       .then(function (res) {
         const notify = "Doctor has been rejected !!";
         dispatch(notification(notify));
@@ -117,7 +117,7 @@ export const rejectDoctorAction = (id) => {
 export const getApprovedDoctors = () => {
   return (dispatch) => {
     axios
-      .get("http://localhost:5000/api/admin/getDoctors")
+      .get("https://oneapp-backend.vercel.app/api/admin/getDoctors")
       .then(function (response) {
        
         dispatch(viewApprovedDoctors(response.data));
@@ -132,7 +132,7 @@ export const getApprovedDoctors = () => {
 export const editDoctor = (user, id) => {
   return (dispatch) => {
     axios
-      .patch("http://localhost:5000/api/users/" + id, user)
+      .patch("https://oneapp-backend.vercel.app/api/users/" + id, user)
       .then(function (res) {
         console.log(res.data.success);
         const notify = "Doctor data has been updated successfully";
@@ -148,7 +148,7 @@ export const editDoctor = (user, id) => {
 export const deleteApprovedDoctor = (id) => {
   return (dispatch) => {
     axios
-      .delete("http://localhost:5000/api/users/" + id)
+      .delete("https://oneapp-backend.vercel.app/api/users/" + id)
       .then(function (res) {
        
         dispatch(notification(res.data.success));
@@ -165,7 +165,7 @@ export const deleteApprovedDoctor = (id) => {
 export const getPatients = () => {
   return (dispatch) => {
     axios
-      .get("http://localhost:5000/api/admin/getPatients")
+      .get("https://oneapp-backend.vercel.app/api/admin/getPatients")
       .then(function (response) {
         console.log(response.data);
 
@@ -181,7 +181,7 @@ export const getPatients = () => {
 export const editPatients = (user, id) => {
   return (dispatch) => {
     axios
-      .patch("http://localhost:5000/api/users/" + id, user)
+      .patch("https://oneapp-backend.vercel.app/api/users/" + id, user)
       .then(function (res) {
         console.log(res.data.success);
         const notify="Patient data updated successfully"
@@ -197,7 +197,7 @@ export const editPatients = (user, id) => {
 export const deletePatients = (id) => {
   return (dispatch) => {
     axios
-      .delete("http://localhost:5000/api/users/" + id)
+      .delete("https://oneapp-backend.vercel.app/api/users/" + id)
       .then(function (res) {
         const notify="Patient has been deleted successfully"
         dispatch(notification(notify));
@@ -213,7 +213,7 @@ export const deletePatients = (id) => {
 export const getQuries = () => {
   return (dispatch) => {
     axios
-      .get("http://localhost:5000/api/contact")
+      .get("https://oneapp-backend.vercel.app/api/contact")
       .then(function (response) {
         console.log(response.data);
         dispatch(viewQuery(response.data));
@@ -228,7 +228,7 @@ export const getQuries = () => {
 export const deleteQueryAction = (id) => {
   return (dispatch) => {
     axios
-      .delete("http://localhost:5000/api/contact/" + id)
+      .delete("https://oneapp-backend.vercel.app/api/contact/" + id)
       .then(function (res) {
         
         const notify = "Inquiry has been deleted successfully";
@@ -244,7 +244,7 @@ export const deleteQueryAction = (id) => {
 export const postQuery = (user) => {
   return (dispatch) => {
     axios
-      .post("http://localhost:5000/api/contact", user)
+      .post("https://oneapp-backend.vercel.app/api/contact", user)
       .then(function (res) {
         const notify = "Response has been sent successfully";
         const data = "inquiry";
@@ -260,7 +260,7 @@ export const postQuery = (user) => {
 export const getAppointmentsHistory = () => {
   return (dispatch) => {
     axios
-      .get("http://localhost:5000/api/appointment/history")
+      .get("https://oneapp-backend.vercel.app/api/appointment/history")
       .then(function (response) {
         console.log(response.data);
         dispatch(viewAppointmentHistory(response.data));
@@ -275,7 +275,7 @@ export const getAppointmentsHistory = () => {
 export const deleteAppointmentHistoryAction = (id) => {
   return (dispatch) => {
     axios
-      .delete("http://localhost:5000/api/appointment/" + id)
+      .delete("https://oneapp-backend.vercel.app/api/appointment/" + id)
       .then(function (res) {
         const notify = "Appointment deleted successfully";
         dispatch(notification(notify));
@@ -291,7 +291,7 @@ export const deleteAppointmentHistoryAction = (id) => {
 export const getUpcomingAppointments = () => {
   return (dispatch) => {
     axios
-      .get("http://localhost:5000/api/appointment/upcoming")
+      .get("https://oneapp-backend.vercel.app/api/appointment/upcoming")
       .then(function (response) {
         console.log(response.data);
         dispatch(viewUpcomingAppointments(response.data));
@@ -306,7 +306,7 @@ export const getUpcomingAppointments = () => {
 export const deleteUpcomingAppointment = (id) => {
   return (dispatch) => {
     axios
-      .delete("http://localhost:5000/api/appointment/" + id)
+      .delete("https://oneapp-backend.vercel.app/api/appointment/" + id)
       .then(function (res) {
         const notify = "Appointment deleted successfully";
         dispatch(notification(notify));
@@ -323,7 +323,7 @@ export const deleteUpcomingAppointment = (id) => {
 export const getAdministrationData = () => {
   return (dispatch) => {
     axios
-      .get("http://localhost:5000/api/admin/administration")
+      .get("https://oneapp-backend.vercel.app/api/admin/administration")
       .then(function (response) {
         console.log(response.data);
         dispatch(viewAdmin(response.data));
@@ -338,7 +338,7 @@ export const getAdministrationData = () => {
 export const editAdministrationData = (user, id) => {
   return (dispatch) => {
     axios
-      .patch("http://localhost:5000/api/users/" + id, user)
+      .patch("https://oneapp-backend.vercel.app/api/users/" + id, user)
       .then(function (res) {
         console.log(res);
         const notify="Administration data updated successfully"
@@ -354,7 +354,7 @@ export const editAdministrationData = (user, id) => {
 export const deleteAdministrationData = (id) => {
   return (dispatch) => {
     axios
-      .delete("http://localhost:5000/api/users/" + id)
+      .delete("https://oneapp-backend.vercel.app/api/users/" + id)
       .then(function (res) {
         dispatch(notification(res.data.success));
         dispatch(getAdministrationData());
@@ -368,7 +368,7 @@ export const deleteAdministrationData = (id) => {
 export const createAdminData = (user) => {
   return (dispatch) => {
     axios
-      .post("http://localhost:5000/api/users", user)
+      .post("https://oneapp-backend.vercel.app/api/users", user)
       .then(function (res) {
       
         const notify = "New data added successfully";

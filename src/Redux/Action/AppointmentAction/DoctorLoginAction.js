@@ -12,7 +12,7 @@ export const registerdoctor = (payload) => {
 
 export const Doctorregister =  (doctor) => {
     return   (dispatch) => {
-        axios.post('http://localhost:5000/api/users/',doctor)
+        axios.post('https://oneapp-backend.vercel.app/api/users/',doctor)
           .then(function (res) {
             console.log("post");
             console.log(res);

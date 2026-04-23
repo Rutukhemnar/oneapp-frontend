@@ -55,7 +55,7 @@ export const viewpatientInfo = (payload) => {
 export const getTodayAppointments = () => {
   return (dispatch) => {
     axios
-      .get(" http://localhost:5000/api/appointment/todaysAppointments  ")
+      .get(" https://oneapp-backend.vercel.app/api/appointment/todaysAppointments  ")
       .then(function (response) {
         console.log(response.data);
         dispatch(viewtodaysAppointments(response.data));
@@ -70,7 +70,7 @@ export const getTodayAppointments = () => {
 export const getAvaiableDoctors = () => {
   return (dispatch) => {
     axios
-      .get("http://localhost:5000/api/patient/availableDoctors")
+      .get("https://oneapp-backend.vercel.app/api/patient/availableDoctors")
       .then(function (response) {
         console.log(response.data.available);
         dispatch(viewavaliableDoctors(response.data.available));
@@ -85,7 +85,7 @@ export const getAvaiableDoctors = () => {
 export const getLeaveDoctors = () => {
   return (dispatch) => {
     axios
-      .get("http://localhost:5000/api/patient/leave")
+      .get("https://oneapp-backend.vercel.app/api/patient/leave")
       .then(function (response) {
         console.log(response.data.leave);
         dispatch(viewleaveDoctors(response.data.leave));
@@ -109,7 +109,7 @@ export const RebookAppointment=(id,payload)=>{
   
   return (dispatch) => {
     axios
-      .patch("http://localhost:5000/api/appointment/"+id,payload)
+      .patch("https://oneapp-backend.vercel.app/api/appointment/"+id,payload)
       .then(function (response) {
         console.log(response);
         dispatch(getTodayAppointments());
@@ -126,7 +126,7 @@ export const RebookAppointment=(id,payload)=>{
 export const getDoctorsInfo = (id) => {
   return (dispatch) => {
     axios
-      .get("http://localhost:5000/api/users/"+id)
+      .get("https://oneapp-backend.vercel.app/api/users/"+id)
       .then(function (response) {
         console.log(response.data);
         dispatch(ViewdoctorsInfo(response.data));
@@ -149,7 +149,7 @@ export const userDetails = (payload) => {
 export const getUser = (id) => {
   return (dispatch) => {
     axios
-      .get("http://localhost:5000/api/users/" + id)
+      .get("https://oneapp-backend.vercel.app/api/users/" + id)
       .then(function (res) {
         console.log(res.data);
         dispatch(userDetails(res.data[0]));
@@ -164,7 +164,7 @@ export const getUser = (id) => {
 export const editprofile = (id,payload) => {
   return (dispatch) => {
     axios
-      .patch("http://localhost:5000/api/users/"+id,payload)
+      .patch("https://oneapp-backend.vercel.app/api/users/"+id,payload)
       .then(function (response) {
         console.log(response.data);
         dispatch(notify(response.data.success))

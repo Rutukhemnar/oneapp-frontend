@@ -31,7 +31,7 @@ export const login = (payload) => {
 
 export const Loginn =  (payload) => {
     return   (dispatch) => {
-        axios.post('http://localhost:5000/api/users/login',payload)
+        axios.post('https://oneapp-backend.vercel.app/api/users/login',payload)
       
         .then(res=> {
     //   console.log("login data")
@@ -62,7 +62,7 @@ export const Loginn =  (payload) => {
   export const getUser = (id) => {
     return (dispatch) => {
       axios
-        .get("http://localhost:5000/api/users/" + id)
+        .get("https://oneapp-backend.vercel.app/api/users/" + id)
         .then(function (res) {
           console.log(res);
           dispatch(login(res.data.doc));

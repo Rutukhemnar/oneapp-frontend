@@ -25,7 +25,7 @@ export const notification = (payload, Role) => {
 export const updateRating = (id,rate) => {
   return (dispatch) => {
     axios
-      .patch(" http://localhost:5000/api/users/" + id,rate)
+      .patch("https://oneapp-backend.vercel.app/api/users/" + id,rate)
       .then(function (response) {
         // console.log(response);
 
@@ -55,7 +55,7 @@ export const Todaysappointment = (payload) => {
 export const getTodayAppointmentbyid= (id) => {
   return (dispatch) => {
     axios
-      .get("http://localhost:5000/api/appointment/patient/today/" + id)
+      .get("https://oneapp-backend.vercel.app//api/appointment/patient/today/" + id)
       .then(function (response) {
         // console.log(" patient get TODAYS APPOINTMENT BY ID");
         // console.log(response.data);
@@ -86,7 +86,7 @@ export const Upcomingappointment = (payload) => {
 export const getUpcomingAppointmentbyid= (id) => {
   return (dispatch) => {
     axios
-      .get("http://localhost:5000/api/appointment/patient/upcoming/" + id)
+      .get("https://oneapp-backend.vercel.app/api/appointment/patient/upcoming/" + id)
       .then(function (response) {
         // console.log(" patient get Upcoming Appointment byid ");
         // console.log(response.data);
@@ -117,7 +117,7 @@ export const historyappointment = (payload) => {
 export const getHistoryAppointmentbyid= (id) => {
   return (dispatch) => {
     axios
-      .get("http://localhost:5000/api/appointment/patient/history/" + id)
+      .get("https://oneapp-backend.vercel.app/api/appointment/patient/history/" + id)
       .then(function (response) {
         // console.log(" patient get History Appointment by id ");
         // console.log(response.data);
@@ -149,7 +149,7 @@ export const regerr = (payload) => {
 export const Registers = (patient) => {
   return (dispatch) => {
     axios
-      .post("http://localhost:5000/api/users/", patient)
+      .post("https://oneapp-backend.vercel.app/api/users/", patient)
       .then(function (res) {
         // console.log(" patient post");
         // console.log(" Registers patient");
@@ -178,7 +178,7 @@ export const createappointment = (payload) => {
 export const CreateAppointment = (appointment) => {
   return (dispatch) => {
     axios
-      .post("http://localhost:5000/api/appointment/", appointment)
+      .post("https://oneapp-backend.vercel.app/api/appointment/", appointment)
       .then(function (res) {
         // console.log(" patient CreateAppointment ");
         // console.log(res.data.data);
@@ -202,7 +202,7 @@ export const CreateAppointment = (appointment) => {
 export const DoctorById = (id) => {
   return (dispatch) => {
     axios
-      .get("http://localhost:5000/api/users/" + id)
+      .get("https://oneapp-backend.vercel.app/api/users/" + id)
       .then(function (response) {
         // console.log("patient DoctorById ");
         // console.log(response.data);
@@ -226,7 +226,7 @@ export const viewDoctorById = (payload) => {
 export const DoctorAvailable = () => {
   return (dispatch) => {
     axios
-      .get("http://localhost:5000/api/patient/availableDoctors")
+      .get("https://oneapp-backend.vercel.app/api/patient/availableDoctors")
       .then(function (response) {
         // console.log(" patient DoctorAvailable ");
         // console.log(response.data.available);
